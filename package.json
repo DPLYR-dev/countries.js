@@ -1,6 +1,6 @@
 {
   "name": "countriesjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package that helps you retrive information about countries. Everything included phone code, currencies, geo data, languages and more than 70 data type  to retrive",
   "main": "dist/index.js",
   "repository": {
