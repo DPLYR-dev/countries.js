@@ -1,5 +1,5 @@
 var { t } = require('typy')
-const fs  = require('fs')
+const fs = require('fs')
 function get(folder, country, location) {
   var f = require('./resources/' + folder + '/' + country + '.json');
   return t(f, location);
@@ -17,282 +17,570 @@ function toArray(obj) {
   }
   return result;
 }
-
-getName = function (c) {
+var getName = function (c) {
   return get('data', c, 'name.common').input
 }
-getOfficalName = function (c) {
+var getOfficalName = function (c) {
   return get('data', c, 'name.official').input
 }
-getNativeName = function (c) {
+var getNativeName = function (c) {
   var a = get('data', c, 'name.native').input
   return toArray(a)[0][0]
 }
-getOfficialNativeName = function (c) {
+var getOfficialNativeName = function (c) {
   var a = get('data', c, 'name.native').input
   return toArray(a)[0][1]
 }
-getDemonym = function (c) {
+var getDemonym = function (c) {
   return get('data', c, 'demonym').input
 }
-getCapital = function (c) {
+var getCapital = function (c) {
   return get('data', c, 'capital').input
 }
-getIsoAlpha2 = function (c) {
+var getIsoAlpha2 = function (c) {
   return get('data', c, 'iso_3166_1_alpha2').input
 }
-getIsoAlpha3 = function (c) {
+var getIsoAlpha3 = function (c) {
   return get('data', c, 'iso_3166_1_alpha3').input
 }
-getIsoNumeric = function (c) {
+var getIsoNumeric = function (c) {
   return get('data', c, 'iso_3166_1_numeric').input
 }
-getTld = function (c) {
+var getTld = function (c) {
   return get('data', c, 'tld').input[0]
 }
-getTlds = function (c) {
+var getTlds = function (c) {
   return get('data', c, 'tld').input
 }
-getAltSpellings = function (c) {
+var getAltSpellings = function (c) {
   return get('data', c, 'alt_spellings').input
 }
-getLanguage = function (c) {
+var getLanguage = function (c) {
   return toArray(get('data', c, 'languages').input)[0]
 }
-getLanguages = function (c) {
+var getLanguages = function (c) {
   return toArray(get('data', c, 'languages').input)
 }
-getContinent = function (c) {
+var getContinent = function (c) {
   return toArray(get('data', c, 'geo.continent').input)[0]
 }
-usesPostalCode = function (c) {
+var usesPostalCode = function (c) {
   return get('data', c, 'geo.postal_code').input
 }
-getLatitude = function (c) {
+var getLatitude = function (c) {
   return get('data', c, 'geo.latitude').input
 }
-getLongitude = function (c) {
+var getLongitude = function (c) {
   return get('data', c, 'geo.longitude').input
 }
-getLatitudeDesc = function (c) {
+var getLatitudeDesc = function (c) {
   return get('data', c, 'geo.latitude_desc').input
 }
-getLongitudeDesc = function (c) {
+var getLongitudeDesc = function (c) {
   return get('data', c, 'geo.longitude_desc').input
 }
-getMaxLongitude = function (c) {
+var getMaxLongitude = function (c) {
   return get('data', c, 'geo.max_longitude').input
 }
-getMinLongitude = function (c) {
+var getMinLongitude = function (c) {
   return get('data', c, 'geo.min_longitude').input
 }
-getMaxLatitude = function (c) {
+var getMaxLatitude = function (c) {
   return get('data', c, 'geo.max_latitude').input
 }
-getMinLatitude = function (c) {
+var getMinLatitude = function (c) {
   return get('data', c, 'geo.min_latitude').input
 }
-getArea = function (c) {
+var getArea = function (c) {
   return get('data', c, 'geo.area').input
 }
-getRegion = function (c) {
+var getRegion = function (c) {
   return get('data', c, 'geo.region').input
 }
-getSubregion = function (c) {
+var getSubregion = function (c) {
   return get('data', c, 'geo.subregion').input
 }
-getWorldRegion = function (c) {
+var getWorldRegion = function (c) {
   return get('data', c, 'geo.world_region').input
 }
-getRegionCode = function (c) {
+var getRegionCode = function (c) {
   return get('data', c, 'geo.region_code').input
 }
-getSubregionCode = function (c) {
+var getSubregionCode = function (c) {
   return get('data', c, 'geo.subregion_code').input
 }
 
-isLandlocked = function (c) {
+var isLandlocked = function (c) {
   return get('data', c, 'geo.landlocked').input
 }
-getBorders = function (c) {
+var getBorders = function (c) {
   return get('data', c, 'geo.borders').input
 }
-isIndependent = function (c) {
+var isIndependent = function (c) {
   return get('data', c, 'geo.independent').input
 }
-getCallingCode = function (c) {
+var getCallingCode = function (c) {
   return get('data', c, 'dialling.calling_code').input[0]
 }
 
-getCallingCodes = function (c) {
+var getCallingCodes = function (c) {
   return get('data', c, 'dialling.calling_code').input
 }
 
-getNationalPrefix = function (c) {
+var getNationalPrefix = function (c) {
   return get('data', c, 'dialling.national_prefix').input
 }
 
-getNationalNumberLength = function (c) {
+var getNationalNumberLength = function (c) {
   return get('data', c, 'dialling.national_number_lengths').input[0]
 }
 
-getNationalNumberLengths = function (c) {
+var getNationalNumberLengths = function (c) {
   return get('data', c, 'dialling.national_number_lengths').input
 }
-getNationalDestinationCodeLength = function (c) {
+var getNationalDestinationCodeLength = function (c) {
   return get('data', c, 'dialling.national_destination_code_lengths').input[0]
 }
 
-getNationalDestinationCodeLengths = function (c) {
+var getNationalDestinationCodeLengths = function (c) {
   return get('data', c, 'dialling.national_destination_code_lengths').input
 }
-getInternationalPrefix = function (c) {
+var getInternationalPrefix = function (c) {
   return get('data', c, 'dialling.international_prefix').input
 }
-getAddressFormat = function (c) {
+var getAddressFormat = function (c) {
   return get('data', c, 'extra.address_format').input
 }
-getGeonameid = function (c) {
+var getGeonameid = function (c) {
   return get('data', c, 'extra.geonameid').input
 }
-getEdgar = function (c) {
+var getEdgar = function (c) {
   return get('data', c, 'extra.edgar').input
 }
-getWmo = function (c) {
+var getWmo = function (c) {
   return get('data', c, 'extra.wmo').input
 }
-getDs = function (c) {
+var getDs = function (c) {
   return get('data', c, 'extra.ds').input
 }
-getFifa = function (c) {
+
+var getFifa = function (c) {
   return get('data', c, 'extra.fifa').input
 }
-getFips = function (c) {
+var getFips = function (c) {
   return get('data', c, 'extra.fips').input
 }
-getGaul = function (c) {
+var getGaul = function (c) {
   return get('data', c, 'extra.gaul').input
 }
-getIoc = function (c) {
+var getIoc = function (c) {
   return get('data', c, 'extra.ioc').input
 }
-getCowc = function (c) {
+var getCowc = function (c) {
   return get('data', c, 'extra.cowc').input
 }
-getCown = function (c) {
+var getCown = function (c) {
   return get('data', c, 'extra.cown').input
 }
-getFao = function (c) {
+var getFao = function (c) {
   return get('data', c, 'extra.fao').input
 }
-getImf = function (c) {
+var getImf = function (c) {
   return get('data', c, 'extra.imf').input
 }
-getAr5 = function (c) {
+var getAr5 = function (c) {
   return get('data', c, 'extra.ar5').input
 }
-isEuMember = function (c) {
+var isEuMember = function (c) {
   return get('data', c, 'extra.eu_member').input
 }
-getVatRates = function (c) {
+var getVatRates = function (c) {
   return get('data', c, 'extra.vat_rates').input
 }
-getEmoji = function (c) {
+var getEmoji = function (c) {
   return get('data', c, 'extra.emoji').input
 }
-getDivisons = function (c) {
+var getDivisons = function (c) {
   return get('divisions', c, '').input
 }
-getDivisonNames = function (c) {
+var getDivisonNames = function (c) {
   var a = toArray(get('divisions', c, '').input)
   var b = [];
   for (let i = 0; i < a.length; i++) {
     b.push(a[i][0])
   }
-  console.log(b)
+  return b
 }
-getDivision = function (c, n) {
+var getDivision = function (c, n) {
   return get('divisions', c, n).input
 }
-getCurrency = function (c) {
+var getCurrency = function (c) {
   return get('data', c, 'currency').input
 }
 
-getGeoJSON = function (c) {
+var getGeoJSON = function (c) {
   return get('geodata', c, '').input
 }
 
-getFlagSVG = function (c) {
-  return fs.readFile('./resources/flags/' + c + '.svg', 'utf8', function (err, contents) {
-    console.log(contents);
+var getFlagSVG = function (c) {
+  fs.readFile('./resources/flags/' + c + '.svg', 'utf8', function (err, contents) {
+    return contents
   });
 }
 
 
-console.log(getFlagSVG('eg'))
+class Country {
+    constructor(country, division) {
+      this.country = country;
+      this.diviosn = division;
+    }
+    get getName() {
+      // console.log(country+"this is class")
+      return get('data', this.country, 'name.common').input
+    }
+    get getOfficalName () {
+      return get('data', this.country, 'name.official').input
+    }
+    get getNativeName () {
+      var a = get('data', this.country, 'name.native').input
+      return toArray(a)[0][0]
+    }
+    get getOfficialNativeName  () {
+      var a = get('data', this.country, 'name.native').input
+      return toArray(a)[0][1]
+    }
+    get getDemonym  () {
+      return get('data', this.country, 'demonym').input
+    }
+    get getCapital  () {
+      return get('data', this.country, 'capital').input
+    }
+    get getIsoAlpha2  () {
+      return get('data', this.country, 'iso_3166_1_alpha2').input
+    }
+    get getIsoAlpha3  () {
+      return get('data', this.country, 'iso_3166_1_alpha3').input
+    }
+    get getIsoNumeric  () {
+      return get('data', this.country, 'iso_3166_1_numeric').input
+    }
+    get getTld  () {
+      return get('data', this.country, 'tld').input[0]
+    }
+    get getTlds  () {
+      return get('data', this.country, 'tld').input
+    }
+    get getAltSpellings  () {
+      return get('data', this.country, 'alt_spellings').input
+    }
+    get getLanguage  () {
+      return toArray(get('data', this.country, 'languages').input)[0]
+    }
+    get getLanguages  () {
+      return toArray(get('data', this.country, 'languages').input)
+    }
+    get getContinent  () {
+      return toArray(get('data', this.country, 'geo.continent').input)[0]
+    }
+    get usesPostalCode  () {
+      return get('data', this.country, 'geo.postal_code').input
+    }
+    get getLatitude  () {
+      return get('data', this.country, 'geo.latitude').input
+    }
+    get getLongitude  () {
+      return get('data', this.country, 'geo.longitude').input
+    }
+    get getLatitudeDesc  () {
+      return get('data', this.country, 'geo.latitude_desc').input
+    }
+    get getLongitudeDesc  () {
+      return get('data', this.country, 'geo.longitude_desc').input
+    }
+    get getMaxLongitude  () {
+      return get('data', this.country, 'geo.max_longitude').input
+    }
+    get getMinLongitude  () {
+      return get('data', this.country, 'geo.min_longitude').input
+    }
+    get getMaxLatitude  () {
+      return get('data', this.country, 'geo.max_latitude').input
+    }
+    get getMinLatitude  () {
+      return get('data', this.country, 'geo.min_latitude').input
+    }
+    get getArea  () {
+      return get('data', this.country, 'geo.area').input
+    }
+    get getRegion  () {
+      return get('data', this.country, 'geo.region').input
+    }
+    get getSubregion  () {
+      return get('data', this.country, 'geo.subregion').input
+    }
+    get getWorldRegion  () {
+      return get('data', this.country, 'geo.world_region').input
+    }
+    get getRegionCode  () {
+      return get('data', this.country, 'geo.region_code').input
+    }
+    get getSubregionCode  () {
+      return get('data', this.country, 'geo.subregion_code').input
+    }
+    
+    get isLandlocked  () {
+      return get('data', this.country, 'geo.landlocked').input
+    }
+    get getBorders  () {
+      return get('data', this.country, 'geo.borders').input
+    }
+    get isIndependent  () {
+      return get('data', this.country, 'geo.independent').input
+    }
+    get getCallingCode  () {
+      return get('data', this.country, 'dialling.calling_code').input[0]
+    }
+    
+    get getCallingCodes  () {
+      return get('data', this.country, 'dialling.calling_code').input
+    }
+    
+    get getNationalPrefix  () {
+      return get('data', this.country, 'dialling.national_prefix').input
+    }
+    
+    get getNationalNumberLength  () {
+      return get('data', this.country, 'dialling.national_number_lengths').input[0]
+    }
+    
+    get getNationalNumberLengths  () {
+      return get('data', this.country, 'dialling.national_number_lengths').input
+    }
+    get getNationalDestinationCodeLength  () {
+      return get('data', this.country, 'dialling.national_destination_code_lengths').input[0]
+    }
+    
+    get getNationalDestinationCodeLengths  () {
+      return get('data', this.country, 'dialling.national_destination_code_lengths').input
+    }
+    get getInternationalPrefix  () {
+      return get('data', this.country, 'dialling.international_prefix').input
+    }
+    get getAddressFormat  () {
+      return get('data', this.country, 'extra.address_format').input
+    }
+    get getGeonameid  () {
+      return get('data', this.country, 'extra.geonameid').input
+    }
+    get getEdgar  () {
+      return get('data', this.country, 'extra.edgar').input
+    }
+    get getWmo  () {
+      return get('data', this.country, 'extra.wmo').input
+    }
+    get getDs  () {
+      return get('data', this.country, 'extra.ds').input
+    }
+    
+    get getFifa  () {
+      return get('data', this.country, 'extra.fifa').input
+    }
+    get getFips  () {
+      return get('data', this.country, 'extra.fips').input
+    }
+    get getGaul  () {
+      return get('data', this.country, 'extra.gaul').input
+    }
+    get getIoc  () {
+      return get('data', this.country, 'extra.ioc').input
+    }
+    get getCowc  () {
+      return get('data', this.country, 'extra.cowc').input
+    }
+    get getCown  () {
+      return get('data', this.country, 'extra.cown').input
+    }
+    get getFao  () {
+      return get('data', this.country, 'extra.fao').input
+    }
+    get getImf  () {
+      return get('data', this.country, 'extra.imf').input
+    }
+    get getAr5  () {
+      return get('data', this.country, 'extra.ar5').input
+    }
+    get isEuMember  () {
+      return get('data', this.country, 'extra.eu_member').input
+    }
+    get getVatRates  () {
+      return get('data', this.country, 'extra.vat_rates').input
+    }
+    get getEmoji  () {
+      return get('data', this.country, 'extra.emoji').input
+    }
+    get getDivisons  () {
+      return get('divisions', this.country, '').input
+    }
+    get getDivisonNames  () {
+      var a = toArray(get('divisions', this.country, '').input)
+      var b = [];
+      for (let i = 0; i < a.length; i++) {
+        b.push(a[i][0])
+      }
+      return b
+    }
+    get getDivision  () {
+      return get('divisions', this.country, this.division).input
+    }
+    get getCurrency  () {
+      return get('data', this.country, 'currency').input
+    }
+    
+    get getGeoJSON  () {
+      return get('geodata', this.country, '').input
+    }
+    
+    get getFlagSVG  () {
+      fs.readFile('./resources/flags/' + this.country + '.svg', 'utf8', function (err, contents) {
+        return contents
+      });
+    }
+    
+}
+var egypt = new Country('eg')
+egypt.division = "WAD"
+console.log(egypt.getName)
 
-getName('eg')
-getOfficalName('eg')
-getNativeName('eg')
-getOfficialNativeName('eg')
-getDemonym('eg')
-getCapital('eg')
-getIsoAlpha2('eg')
-getIsoAlpha3('eg')
-getIsoNumeric('eg')
-getTld('eg')
-getTlds('eg')
-getAltSpellings('eg')
-getLanguage('eg')
-getLanguages('eg')
-getContinent('eg')
-usesPostalCode('eg')
-getLatitude('eg')
-getLongitude('eg')
-getLatitudeDesc('eg')
-getLongitudeDesc('eg')
-getMaxLongitude('eg')
-getMinLongitude('eg')
-getMaxLatitude('eg')
-getMinLatitude('eg')
-getArea('eg')
-getRegion('eg')
-getSubregion('eg')
-getWorldRegion('eg')
-getRegionCode('eg')
-getSubregionCode('eg')
-isLandlocked('eg')
-getBorders('eg')
-isIndependent('eg')
-getCallingCode('eg')
-getCallingCodes('eg')
-getNationalPrefix('eg')
-getNationalNumberLength('eg')
-getNationalNumberLengths('eg')
-getNationalDestinationCodeLength('eg')
-getNationalDestinationCodeLengths('eg')
-getInternationalPrefix('eg')
-getAddressFormat('eg')
-getGeonameid('eg')
-getEdgar('eg')
-getWmo('eg')
-getFifa('eg')
-getFips('eg')
-getGaul('eg')
-getIoc('eg')
-getCowc('eg')
-getCown('eg')
-getFao('eg')
-getImf('eg')
-getAr5('eg')
-isEuMember('eg')
-getVatRates('eg')
-getVatRates('eg')
-getDs('eg')
-getEmoji('eg')
-getDivisons('eg')
-getDivisonNames('eg')
-getDivision('eg', 'AST')
-getCurrency('eg')
-getGeoJSON('eg')
-getFlagSVG('eg')
+// getName('eg')
+// getOfficalName('eg')
+// getNativeName('eg')
+// getOfficialNativeName('eg')
+// getDemonym('eg')
+// getCapital('eg')
+// getIsoAlpha2('eg')
+// getIsoAlpha3('eg')
+// getIsoNumeric('eg')
+// getTld('eg')
+// getTlds('eg')
+// getAltSpellings('eg')
+// getLanguage('eg')
+// getLanguages('eg')
+// getContinent('eg')
+// usesPostalCode('eg')
+// getLatitude('eg')
+// getLongitude('eg')
+// getLatitudeDesc('eg')
+// getLongitudeDesc('eg')
+// getMaxLongitude('eg')
+// getMinLongitude('eg')
+// getMaxLatitude('eg')
+// getMinLatitude('eg')
+// getArea('eg')
+// getRegion('eg')
+// getSubregion('eg')
+// getWorldRegion('eg')
+// getRegionCode('eg')
+// getSubregionCode('eg')
+// isLandlocked('eg')
+// getBorders('eg')
+// isIndependent('eg')
+// getCallingCode('eg')
+// getCallingCodes('eg')
+// getNationalPrefix('eg')
+// getNationalNumberLength('eg')
+// getNationalNumberLengths('eg')
+// getNationalDestinationCodeLength('eg')
+// getNationalDestinationCodeLengths('eg')
+// getInternationalPrefix('eg')
+// getAddressFormat('eg')
+// getGeonameid('eg')
+// getEdgar('eg')
+// getWmo('eg')
+// getFifa('eg')
+// getFips('eg')
+// getGaul('eg')
+// getIoc('eg')
+// getCowc('eg')
+// getCown('eg')
+// getFao('eg')
+// getImf('eg')
+// getAr5('eg')
+// isEuMember('eg')
+// getVatRates('eg')
+// getVatRates('eg')
+// getDs('eg')
+// getEmoji('eg')
+// getDivisons('eg')
+// getDivisonNames('eg')
+// getDivision('eg', 'AST')
+// getCurrency('eg')
+// getGeoJSON('eg')
+// getFlagSVG('eg')
+
+export default Country
+export {
+  getName,
+  getOfficalName,
+  getNativeName,
+  getOfficialNativeName,
+  getDemonym,
+  getCapital,
+  getIsoAlpha2,
+  getIsoAlpha3,
+  getIsoNumeric,
+  getTld,
+  getTlds,
+  getAltSpellings,
+  getLanguage,
+  getLanguages,
+  getContinent,
+  usesPostalCode,
+  getLatitude,
+  getLongitude,
+  getLatitudeDesc,
+  getLongitudeDesc,
+  getMaxLongitude,
+  getMinLongitude,
+  getMaxLatitude,
+  getMinLatitude,
+  getArea,
+  getRegion,
+  getSubregion,
+  getWorldRegion,
+  getRegionCode,
+  getSubregionCode,
+  isLandlocked,
+  getBorders,
+  isIndependent,
+  getCallingCode,
+  getCallingCodes,
+  getNationalPrefix,
+  getNationalNumberLength,
+  getNationalNumberLengths,
+  getNationalDestinationCodeLength,
+  getNationalDestinationCodeLengths,
+  getInternationalPrefix,
+  getAddressFormat,
+  getGeonameid,
+  getEdgar,
+  getWmo,
+  getFifa,
+  getFips,
+  getGaul,
+  getIoc,
+  getCowc,
+  getCown,
+  getFao,
+  getImf,
+  getAr5,
+  isEuMember,
+  getVatRates,
+  getDs,
+  getEmoji,
+  getDivisons,
+  getDivisonNames,
+  getDivision,
+  getCurrency,
+  getGeoJSON,
+  getFlagSVG,
+}

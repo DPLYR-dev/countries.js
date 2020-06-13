@@ -2,7 +2,7 @@
   "name": "countries.js",
   "version": "1.0.0",
   "description": "A package that helps you retrive information about countries. Everything included phone code, currencies, geo data, languages and more than 70 data type  to retrive",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dplyr-dev/countries.js.git"
@@ -27,6 +27,13 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
     "rimraf": "^3.0.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
