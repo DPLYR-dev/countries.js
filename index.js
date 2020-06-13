@@ -447,9 +447,9 @@ class Country {
     }
     
 }
-var egypt = new Country('eg')
-egypt.division = "WAD"
-console.log(egypt.getName)
+// var egypt = new Country('eg')
+// egypt.division = "WAD"
+// console.log(egypt.getName)
 
 // getName('eg')
 // getOfficalName('eg')
