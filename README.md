@@ -178,27 +178,10 @@ egypt.getVatRates;                              egypt.getEmoji;
 // GeoJson data returned as string                  // SVG data returned as string
 egypt.getGeoJson;                               egypt.getFlag;
 
-// Divisions returned as array                      // {"official":"جمهورية مصر العربية","common":"مصر"}
-egypt.getDivisions;                             egypt.getTranslation;
-
-// {"ara":{"official":"جمهورية مصر العربية","common":"مصر"}}
-egypt.getNativeNames;
+// Divisions returned as array                      
 
 // {"iso_4217_code":"EGP","iso_4217_numeric":818,"iso_4217_name":"Egyptian Pound","iso_4217_minor_unit":2}
 egypt.getCurrency;
-
-// {"EGP":{"iso_4217_code":"EGP","iso_4217_numeric":818,"iso_4217_name":"Egyptian Pound","iso_4217_minor_unit":2}}
-egypt.getCurrencies;
-
-// {"ara":{"official":"جمهورية مصر العربية","common":"مصر"},"cym":{"official":"Arab Republic of Egypt","common":"Yr Aifft"},"deu":{"official":"Arabische Republik Ägypten","common":"Ägypten"},"fra":{"official":"République arabe d'Égypte","common":"Égypte"},"hrv":{"official":"Arapska Republika Egipat","common":"Egipat"},"ita":{"official":"Repubblica araba d'Egitto","common":"Egitto"},"jpn":{"official":"エジプト·アラブ共和国","common":"エジプト"},"nld":{"official":"Arabische Republiek Egypte","common":"Egypte"},"por":{"official":"República Árabe do Egipto","common":"Egito"},"rus":{"official":"Арабская Республика Египет","common":"Египет"},"spa":{"official":"República Árabe de Egipto","common":"Egipto"},"fin":{"official":"Egyptin arabitasavalta","common":"Egypti"}}
-egypt.getTranslations;
-
-// {"continent":{"AF":"Africa"},"postal_code":true,"latitude":"27 00 N","latitude_dec":"26.756103515625","longitude":"30 00 E","longitude_dec":"29.86229705810547","max_latitude":"31.916667","max_longitude":"36.333333","min_latitude":"20.383333","min_longitude":"24.7","area":1002450,"region":"Africa","subregion":"Northern Africa","world_region":"EMEA","region_code":"002","subregion_code":"015","landlocked":false,"borders":["ISR","LBY","SDN"],"independent":"Yes"}
-egypt.getGeodata;
-
-// {"geonameid":357994,"edgar":"H2","itu":"EGY","marc":"ua","wmo":"EG","ds":"ET","fifa":"EGY","fips":"EG","gaul":40765,"ioc":"EGY","cowc":"EGY","cown":651,"fao":59,"imf":469,"ar5":"MAF","address_format":"{{recipient}}\n{{street}}\n{{postalcode}} {{city}}\n{{country}}","eu_member":null,"vat_rates":null,"emoji":"🇪🇬"}
-egypt.getExtra;
-
 // {"name":"Al Iskandariyah","alt_names":["El Iskandariya","al-Iskandariyah","al-Iskandarīyah","Alexandria","Alexandrie","Alexandria"],"geo":{"latitude":31.2000924,"longitude":29.9187387,"min_latitude":31.1173177,"min_longitude":29.8233701,"max_latitude":31.330904,"max_longitude":30.0864016}}
 egypt.division = "WAD"
 egypt.getDivision
