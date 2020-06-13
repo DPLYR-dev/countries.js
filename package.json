@@ -1,0 +1,27 @@
+{
+  "name": "countries.js",
+  "version": "1.0.0",
+  "description": "A package that helps you retrive information about countries. Everything included phone code, currencies, geo data, languages and more than 70 data type  to retrive",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dplyr-dev/countries.js.git"
+  },
+  "scripts": {
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && node dist/index.js"
+  },
+  "keywords": [
+    "countries",
+    "javascript"
+  ],
+  "author": "Ahmed M. Gamal <a.gamal@dplyr.dev>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dplyr-dev/countries.js/issues"
+  },
+  "homepage": "https://github.com/dplyr-dev/countries.js#readme",
+  "dependencies": {
+    "typy": "^3.3.0"
+  }
+}
