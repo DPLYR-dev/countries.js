@@ -2,8 +2,9 @@
 
 **Countries.js** is a simple and lightweight package for retrieving country details with flexibility. A whole bunch of data including name, demonym, capital, iso codes, dialling codes, geo data, currencies, flags, emoji, and other attributes for all 250 countries worldwide at your fingertips.
 
-**This is package is sponsored and maintained by [DPLYR](https://www.dplyr.dev) the easist way to deploy your websites with support for node.js and all the major databasescheck them out at [www.dplyr.dev](https://www.dplyr.dev)**
-
+### Currently Supported by awesome [DPLYR](https://dplyr.dev)
+![image (alt)](https://i.imgur.com/D1WG1Bo.png&s=50)
+* [DPLYR](https://dplyr.dev) is a new generation of cloud platforms and aims to help developers in their road with open source contributions, and at the end we can say thanks.
 
 ## Usage
 
@@ -321,13 +322,35 @@ Bug reports, feature requests, and pull requests are very welcome.
 If you discover a security vulnerability within this project, please send an e-mail to [info@dplyr.dev](info@dplyr.dev). All security vulnerabilities will be promptly addressed.
 
 
-## About DPLYR
+### All Supported Projects by [DPLYR](https://dplyr.dev)
+* [Splash Screen - Flutter](https://github.com/DPLYR-dev/SplashScreenFlutterPackage)
+  <br> a flutter package created to show simple splashscreen
 
-[DPLYR](https://www.dplyr.dev) is a SaaS tool that helps devlopers just like you to deploy thier web apps more easily. It supports deploying Node.js apps with MongoDB, MySQL or PostgreSQL databases all for free. Go now  to [www.dplyr.dev](https://www.dplyr.dev) and create a free account.
+* [In App Call Alert - Flutter](https://github.com/DPLYR-dev/InAppCallAlert)
+  <br> a flutter package created recently to show call alert with sound
+
+* [File Manager](https://github.com/DPLYR-dev/file-manager)
+  <br> a php project created to manage machines/servers through ftp servers
+  
+* [Countries Js](https://github.com/DPLYR-dev/file-manager)
+  <br> a javascript project created for retrieving country details with flexibility.
+  
+* [Block temp mails](https://github.com/DPLYR-dev/block-temp-emails)
+  <br> a javascript api to prevent temporary emails from signing up on your website. Super easy to use
+  
+* [Disposable Emails List](https://github.com/DPLYR-dev/disposable-emails-list-domains-spam)
+  <br> a python script to generate the temporary and spam doamins to prevent them and you can block them through this API [Block temp mails](https://github.com/DPLYR-dev/block-temp-emails)
+
+## About DPLYR
+[DPLYR](https://www.dplyr.dev) is a SaaS tool that helps developers just like you to deploy their web apps more easily. It supports deploying Node.js apps with MongoDB, MySQL or PostgreSQL databases all for free. Go now  to [www.dplyr.dev](https://www.dplyr.dev) and create a free account.
+
 
 ## Acknowledgement
 
 > This package is a fork from [Rinvex countries](https://github.com/rinvex/countries) and modified to work with javascript. Thanks rinvex team for your contribution to the open source community😀
+
+### Created by [Ahmed Gamal](https://github.com/ahmedmgh67)
+
 ## License
 
 This software is released under [The MIT License (MIT)](LICENSE).
